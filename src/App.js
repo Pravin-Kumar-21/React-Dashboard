@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useContext } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ThemeContextProvider, { ThemeContext } from './contexts/ThemeContext';
+import Navbar from './Components/Navbar';
+import Slidebar from './Components/Slidebar';
+import getTheme from './theme';
+import { ThemeProvider, CssBaseline, Box } from '@mui/material';
 
-function App() {
+const MainContent = () => {
+  const { mode } = useContext(ThemeContext);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={getTheme(mode)}>
+    <CssBaseline />
+    <Router>
+        <Navbar handleDrawerToggle={handleDrawerToggle} />
+        <Slidebar mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} />
+        <Box
+          component="main"
+          sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - 240px)` }, marginTop: 8 }}
+          >
+        </Box>
+    </Router>
+    </ThemeProvider>
   );
-}
+};
+
+const App = () => {
+  return (
+    <ThemeContextProvider>
+      <MainContent />
+    </ThemeContextProvider>
+  );
+};
 
 export default App;
