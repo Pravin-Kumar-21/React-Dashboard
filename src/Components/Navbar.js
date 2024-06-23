@@ -2,6 +2,7 @@
 import React from 'react';
 import { AppBar, Toolbar, IconButton, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { Link } from 'react-router-dom';
 
 const Navbar = ({ handleDrawerToggle }) => {
   return (
@@ -16,7 +17,7 @@ const Navbar = ({ handleDrawerToggle }) => {
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" noWrap>
+        <Typography variant="h6" noWrap component={Link} to="/" sx={{ color: 'inherit', textDecoration: 'none' }}>
           Dashboard
         </Typography>
       </Toolbar>

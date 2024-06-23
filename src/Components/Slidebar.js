@@ -19,9 +19,6 @@ const Slidebar = ({ mobileOpen, handleDrawerToggle }) => {
       }}
     >
       <List>
-        <ListItem button component={Link} to="/dashboard">
-          <ListItemText primary="Dashboard" />
-        </ListItem>
         <ListItem button component={Link} to="/calendar">
           <ListItemText primary="Calendar" />
         </ListItem>
