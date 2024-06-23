@@ -25,8 +25,8 @@ const Slidebar = ({ mobileOpen, handleDrawerToggle }) => {
         <ListItem button component={Link} to="/kanban">
           <ListItemText primary="Kanban Board" />
         </ListItem>
-        <ListItem button component={Link} to="/settings">
-          <ListItemText primary="Settings" />
+        <ListItem button component={Link} to="/customize">
+          <ListItemText primary="Preferences" />
         </ListItem>
       </List>
     </Drawer>
