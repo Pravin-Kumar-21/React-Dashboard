@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ThemeContextProvider, { ThemeContext } from './contexts/ThemeContext';
 import Navbar from './Components/Navbar';
 import Slidebar from './Components/Slidebar';
+import Dashboard from './Features/Dashboard';
 import getTheme from './theme';
 import { ThemeProvider, CssBaseline, Box } from '@mui/material';
 
@@ -24,6 +25,13 @@ const MainContent = () => {
           component="main"
           sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - 240px)` }, marginTop: 8 }}
           >
+          <Routes>
+            <Route path="/dashboard" element={<Dashboard />} />
+            {/* <Route path="/calendar" element={<Calendar />} />
+            <Route path="/kanban" element={<Kanban />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/chart" element={<Chart />} /> */}
+          </Routes>
         </Box>
     </Router>
     </ThemeProvider>
