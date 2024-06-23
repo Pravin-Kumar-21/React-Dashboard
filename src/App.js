@@ -4,6 +4,7 @@ import ThemeContextProvider, { ThemeContext } from './contexts/ThemeContext';
 import Navbar from './Components/Navbar';
 import Slidebar from './Components/Slidebar';
 import Dashboard from './Features/Dashboard';
+import Calendar from './Features/Calendar';
 import getTheme from './theme';
 import { ThemeProvider, CssBaseline, Box } from '@mui/material';
 
@@ -27,8 +28,8 @@ const MainContent = () => {
           >
           <Routes>
             <Route path="/dashboard" element={<Dashboard />} />
-            {/* <Route path="/calendar" element={<Calendar />} />
-            <Route path="/kanban" element={<Kanban />} />
+            <Route path="/calendar" element={<Calendar />} />
+            {/* <Route path="/kanban" element={<Kanban />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/chart" element={<Chart />} /> */}
           </Routes>
