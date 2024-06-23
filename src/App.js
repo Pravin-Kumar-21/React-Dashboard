@@ -6,6 +6,7 @@ import Navbar from './Components/Navbar';
 import Slidebar from './Components/Slidebar';
 import Chart from './Components/Chart';
 import Calendar from './Features/Calendar';
+import KanbanBoard from './Features/Kanban';
 import getTheme from './theme';
 import { ThemeProvider, CssBaseline, Box } from '@mui/material';
 
@@ -40,8 +41,8 @@ const MainContent = () => {
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/calendar" element={<Calendar />} />
-            {/* <Route path="/kanban" element={<Kanban />} />
-            <Route path="/settings" element={<Settings />} />
+            <Route path="/kanban" element={<KanbanBoard />} />
+            {/* <Route path="/settings" element={<Settings />} />
             <Route path="/chart" element={<Chart />} /> */}
           </Routes>
         </Box>
