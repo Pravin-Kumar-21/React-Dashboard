@@ -7,6 +7,7 @@ import Chart from './Components/Chart'; // Import Chart component
 import CustomTable from './Components/CustomTable'; // Import CustomTable component
 import Calendar from './Features/Calendar';
 import KanbanBoard from './Features/Kanban';
+import ThemeSwitcher from './Components/ThemeChanger';
 import getTheme from './theme';
 import { ThemeProvider, CssBaseline, Box } from '@mui/material';
 
@@ -47,6 +48,7 @@ const MainContent = () => {
             <Route path="/" element={<Dashboard />} /> {/* Render Dashboard component */}
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/kanban" element={<KanbanBoard />} />
+            <Route path="/customize" element={<ThemeSwitcher/>}/>
             {/* Add more routes as needed */}
           </Routes>
         </Box>
